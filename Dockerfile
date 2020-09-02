@@ -1,10 +1,14 @@
-FROM node:12.18.3-alpine3.9
+FROM node:12-alpine
+
+EXPOSE 4200
 
 RUN mkdir /angular
-COPY . /angular
 WORKDIR /angular
 
-RUN npm i
+COPY package.json /angular/package.json
+RUN npm install
 RUN npm install -g @angular/cli
 
-CMD ng serve -o
+COPY . /angular
+
+CMD ng serve --host 0.0.0.0
