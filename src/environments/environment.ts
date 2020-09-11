@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://35.238.244.82:30201//api'
+  api_url: '/api'
 };
